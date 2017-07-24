@@ -1,0 +1,29 @@
+﻿<Window x:Class="Screentroll.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Screentroll"
+        xmlns:converters="clr-namespace:Screentroll.Converters"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525" Background="#02FFFFFF" WindowStyle="None" AllowsTransparency="True" ResizeMode="NoResize" >
+    <Window.Resources>
+        <converters:BoolToVisibilityConverter x:Key="FalseToHiddenConverter" Inverted="False"/>
+        <converters:BoolToVisibilityConverter x:Key="TrueToHiddenConverter" Inverted="True"/>
+    </Window.Resources>
+    <Grid>
+        <Viewbox Visibility="{Binding ShowCake,Converter={StaticResource TrueToHiddenConverter}}">
+            <TextBlock 
+            Foreground="Black"
+            Margin="15 0 15 0"
+            HorizontalAlignment="Stretch"
+            TextAlignment="Center"
+            VerticalAlignment="Center"
+            FontWeight="Black"
+            Text="{Binding DisplayText}"
+            Background="#BFBFBFBF">
+            </TextBlock>
+        </Viewbox>
+        <Image Visibility="{Binding ShowCake,Converter={StaticResource FalseToHiddenConverter}}" x:Name="ImgIntruder" Source="{Binding Image}"/>
+    </Grid>
+</Window>
