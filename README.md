@@ -5,5 +5,4 @@ When an unwanted user tries to do something, the app automaticly captures the in
 If you would like to iterate upon this project, feel free to do so. I look forward to see the iterations :)
 
 
-
-
+**Note:** This project is just a small quick and dirty application, so the code is not perfect but it works!
